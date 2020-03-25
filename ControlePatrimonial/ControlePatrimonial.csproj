@@ -10,6 +10,14 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200325012627_MigacaoInicial.cs" />
     <Compile Remove="Migrations\20200325012627_MigacaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200325014034_MigacaoInicial.cs" />
+    <Compile Remove="Migrations\20200325014034_MigacaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200325203711_PopularTabelas.cs" />
+    <Compile Remove="Migrations\20200325203711_PopularTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200325203941_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200325203941_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200325204421_PopulandoTabelas.cs" />
+    <Compile Remove="Migrations\20200325204421_PopulandoTabelas.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

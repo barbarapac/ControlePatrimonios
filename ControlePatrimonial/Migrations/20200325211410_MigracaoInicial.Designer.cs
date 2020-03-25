@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControlePatrimonial.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20200325014034_MigacaoInicial")]
-    partial class MigacaoInicial
+    [Migration("20200325211410_MigracaoInicial")]
+    partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,7 +78,7 @@ namespace ControlePatrimonial.Migrations
 
                     b.HasKey("IdEmpresa");
 
-                    b.ToTable("Empresas");
+                    b.ToTable("Empresa");
                 });
 
             modelBuilder.Entity("ControlePatrimonial.Models.Funcionario", b =>

@@ -10,7 +10,7 @@ namespace ControlePatrimonial.Context
 
         }
 
-        public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<Empresa> Empresa { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Setor> Setor { get; set; }
     }

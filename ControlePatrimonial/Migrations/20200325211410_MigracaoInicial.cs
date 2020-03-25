@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ControlePatrimonial.Migrations
 {
-    public partial class MigacaoInicial : Migration
+    public partial class MigracaoInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Empresas",
+                name: "Empresa",
                 columns: table => new
                 {
                     IdEmpresa = table.Column<int>(nullable: false)
@@ -28,7 +28,7 @@ namespace ControlePatrimonial.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Empresas", x => x.IdEmpresa);
+                    table.PrimaryKey("PK_Empresa", x => x.IdEmpresa);
                 });
 
             migrationBuilder.CreateTable(
@@ -46,9 +46,9 @@ namespace ControlePatrimonial.Migrations
                 {
                     table.PrimaryKey("PK_Setor", x => x.IdSetor);
                     table.ForeignKey(
-                        name: "FK_Setor_Empresas_EmpresaIdEmpresa",
+                        name: "FK_Setor_Empresa_EmpresaIdEmpresa",
                         column: x => x.EmpresaIdEmpresa,
-                        principalTable: "Empresas",
+                        principalTable: "Empresa",
                         principalColumn: "IdEmpresa",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -76,9 +76,9 @@ namespace ControlePatrimonial.Migrations
                 {
                     table.PrimaryKey("PK_Funcionario", x => x.IdFuncionario);
                     table.ForeignKey(
-                        name: "FK_Funcionario_Empresas_EmpresaIdEmpresa",
+                        name: "FK_Funcionario_Empresa_EmpresaIdEmpresa",
                         column: x => x.EmpresaIdEmpresa,
-                        principalTable: "Empresas",
+                        principalTable: "Empresa",
                         principalColumn: "IdEmpresa",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -114,7 +114,7 @@ namespace ControlePatrimonial.Migrations
                 name: "Setor");
 
             migrationBuilder.DropTable(
-                name: "Empresas");
+                name: "Empresa");
         }
     }
 }
