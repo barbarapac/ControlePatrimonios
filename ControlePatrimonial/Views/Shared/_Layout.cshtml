@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu</a>
-        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Controle Patrimonial</a>
+    <nav class="navbar navbar-expand navbar-dark bg-dark" >
+
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
                     <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                 </li>
             </ul>
         </div>
@@ -27,12 +23,11 @@
         </form>
     </nav>
     <div id="wrapper">
-
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="#menu-toggle">
                         Menu
                     </a>
                 </li>
@@ -48,13 +43,14 @@
             </ul>
         </div>
         <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <a href="#menu-toggle" class="btn btn-outline-dark" id="menu-toggle" style="margin-right: 150px;">></a>
+            <div class="container-fluid" style="display: block; justify-content: center; width: 90%;">
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
             </div>
         </div>
-     </div>
+    </div>
 
        
     <footer class="border-top footer text-muted">
