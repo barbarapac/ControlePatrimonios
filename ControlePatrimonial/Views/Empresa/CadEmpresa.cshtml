@@ -1,0 +1,91 @@
+﻿
+@model IEnumerable<ControlePatrimonial.Models.Empresa>
+
+@{
+    ViewData["Title"] = "Cadastro de empresa";
+}
+
+
+<div class="container-md">
+
+    <div class="card-header" style="">
+        <h1 style="padding: 5px; font-size: xx-large;">Cadastro de empresa</h1>
+    </div>
+
+    <form id="cadEmpresa" method="post">
+        <div class="form-group col-md-12 form-control-file" style="margin-top: 30px; display: flow-root">
+
+            <div class="form-row row col-md-12">
+                <div class="form-group col-md-12">
+                    <label>Nome</label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row row col-md-12">
+                <div class="form-group col-md-12">
+                    <label>Endereco:</label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row col-md-12">
+                <div class="form-group col-md-6">
+                    <label>CNPJ</label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Tipo</label>
+                    <select class="form-control" name="opcoes" id="select">
+                        <option value="E">Filial</option>
+                        <option value="F">Forcenecedor</option>
+                    </select>
+                    <span class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12" style="margin-top: 10px; justify-content:flex-end; display: flex">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+
+        <div class="form-group row col-md-12" style="border-top-style: inset; padding-top: 20px">
+            <div class="form-group row col-md-12" style="padding: 10px;">
+                <h3 style="font-size: inherit;">Lista empresas</h3>
+            </div>
+            <div class="form-group row col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código empresa</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Endereço</th>
+                            <th scope="col">CNPJ</th>
+                            <th scope="col">Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
