@@ -15,7 +15,7 @@ namespace ControlePatrimonial.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeFantasia = table.Column<string>(maxLength: 100, nullable: true),
                     CnpjCpf = table.Column<string>(maxLength: 14, nullable: true),
-                    Endereco = table.Column<string>(maxLength: 100, nullable: true),
+                    Cep = table.Column<string>(maxLength: 20, nullable: true),
                     RazaoSocial = table.Column<string>(maxLength: 100, nullable: true),
                     Telefone = table.Column<string>(maxLength: 15, nullable: true),
                     Rua = table.Column<string>(maxLength: 50, nullable: true),
@@ -59,8 +59,9 @@ namespace ControlePatrimonial.Migrations
                 {
                     IdFuncionario = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(maxLength: 100, nullable: true),
                     Email = table.Column<string>(maxLength: 100, nullable: true),
-                    Endereco = table.Column<string>(maxLength: 100, nullable: true),
+                    Cep = table.Column<string>(maxLength: 20, nullable: true),
                     TipoUsuario = table.Column<string>(maxLength: 10, nullable: true),
                     Telefone = table.Column<string>(maxLength: 15, nullable: true),
                     Rua = table.Column<string>(maxLength: 50, nullable: true),

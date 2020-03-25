@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ControlePatrimonial.Context;
-using System;
+using ControlePatrimonial.Repositories;
 
 namespace ControlePatrimonial
 {
@@ -26,9 +26,10 @@ namespace ControlePatrimonial
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser<Guid>>()
-            .AddEntityFrameworkStores<AppDBContext>()
-            .AddDefaultTokenProviders();
+            // Fonece uma instancia da minha implementação.
+            services.AddTransient<IEmpresaRepository, EmpresaRepository>();
+            services.AddTransient<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddTransient<ISetorRepository, SetorRepository>();
 
             services.AddMvc();
         }

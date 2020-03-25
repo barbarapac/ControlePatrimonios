@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ControlePatrimonial.Models.Setor>
+
+@{
+    ViewData["Title"] = "Setor_Lista";
+}
+
+<div class="card-header" style="margin-top: -35px">
+    <h1 style="padding: 5px; border-radius: 5px; font-size: xx-large;">Setores</h1>
+</div>
+
+<div style="margin-top: 50px">
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Localização
+                </th>
+                <th>
+                   Data de cadastro
+                </th>
+                <th>
+                    Ações
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Localizacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataCadastro)
+                    </td>
+                    <td>
+                        <button asp-action="Edit" asp-route-id="@item.IdSetor" type="button" class="btn btn-secondary btn-sm">Editar</button>
+                        <button asp-action="Details" asp-route-id="@item.IdSetor" type="button" class="btn btn-info btn-sm">Detalhes</button>
+                        <button asp-action="Delete" asp-route-id="@item.IdSetor" type="button" class="btn btn-danger btn-sm">Exluir</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="form-group col-md-12" style="margin-top: 10px; justify-content:flex-start; display: flex">
+        <button asp-action="Create" type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+    </div>
+</div>

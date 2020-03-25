@@ -9,9 +9,11 @@ namespace ControlePatrimonial.Models
         [Key]
         public int IdFuncionario { get; set; }
         [StringLength(100)]
-        public string Email { get; set; }
+        public string Nome { get; set; }
         [StringLength(100)]
-        public string Endereco { get; set; }
+        public string Email { get; set; }
+        [StringLength(20)]
+        public string Cep { get; set; }
         [StringLength(10)]
         public string TipoUsuario { get; set; }
         [StringLength(15)]

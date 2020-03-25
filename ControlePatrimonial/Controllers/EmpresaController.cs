@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ControlePatrimonial.Repositories;
 
 namespace ControlePatrimonial.Controllers.Empresa
 {
     public class EmpresaController : Controller
     {
-        
-        public EmpresaController()
+        private readonly IEmpresaRepository _empresaRepository;
+
+        public EmpresaController(IEmpresaRepository empresaRepository)
         {
-            // cria conexão banco
-            //db = new ProdutoDbContext()
+            _empresaRepository = empresaRepository;
         }
 
-        // GET: /<controller>/
-        public IActionResult CadEmpresa()
+        public IActionResult Empresa_Lista()
+        {
+            var empresas = _empresaRepository.Empresas;
+            return View(empresas);
+        }
+                
+        public IActionResult Empresa_Cadastro()
         {
             //var empresas = db.Empresas.ToList();
 

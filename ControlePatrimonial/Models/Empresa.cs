@@ -12,8 +12,8 @@ namespace ControlePatrimonial.Models
         public string NomeFantasia { get; set; }
         [StringLength(14)]
         public string CnpjCpf { get; set; }
-        [StringLength(100)]
-        public string Endereco { get; set; }
+        [StringLength(20)]
+        public string Cep { get; set; }
         [StringLength(100)]
         public string RazaoSocial { get; set; }
         [StringLength(15)]

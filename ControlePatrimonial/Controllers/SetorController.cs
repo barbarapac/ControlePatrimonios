@@ -4,90 +4,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ControlePatrimonial.Repositories;
 
 namespace ControlePatrimonial.Controllers
 {
     public class SetorController : Controller
     {
-        // GET: Setor
-        public ActionResult CadSetor()
+        private readonly ISetorRepository _setorRepository;
+        private IEmpresaRepository _empresaRepository;
+
+        public SetorController(ISetorRepository setorRepository, IEmpresaRepository empresaRepository)
+        {
+            _setorRepository = setorRepository;
+            _empresaRepository = empresaRepository;
+        }
+
+        public IActionResult Setor_Lista()
+        {
+            var setores = _setorRepository.Setores;
+            return View(setores);
+        }
+
+        public ActionResult Setor_Cadastro()
         {
             return View();
         }
 
-        // GET: Setor/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Setor/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Setor/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(CadSetor));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Setor/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Setor/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(CadSetor));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Setor/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Setor/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(CadSetor));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

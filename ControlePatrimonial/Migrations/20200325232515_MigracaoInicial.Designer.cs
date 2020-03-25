@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControlePatrimonial.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20200325211410_MigracaoInicial")]
+    [Migration("20200325232515_MigracaoInicial")]
     partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace ControlePatrimonial.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
                     b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -46,10 +50,6 @@ namespace ControlePatrimonial.Migrations
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Endereco")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
 
                     b.Property<string>("NomeFantasia")
                         .HasColumnType("nvarchar(100)")
@@ -92,6 +92,10 @@ namespace ControlePatrimonial.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
                     b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -114,7 +118,7 @@ namespace ControlePatrimonial.Migrations
                     b.Property<int?>("EmpresaIdEmpresa")
                         .HasColumnType("int");
 
-                    b.Property<string>("Endereco")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
