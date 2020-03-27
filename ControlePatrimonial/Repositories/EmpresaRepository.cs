@@ -37,5 +37,10 @@ namespace ControlePatrimonial.Repositories
             _context.SaveChanges();
         }
 
+        public void excluirEmpresa(Empresa empresa)
+        {
+            _context.Empresa.Remove(empresa);
+            _context.SaveChanges();
+        }
     }
 }

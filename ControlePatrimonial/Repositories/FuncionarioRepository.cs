@@ -23,5 +23,17 @@ namespace ControlePatrimonial.Repositories
         {
             return _context.Funcionario.FirstOrDefault(f => f.IdFuncionario == FuncionarioId);
         }
+
+        public Funcionario criarFuncionario()
+        {
+            Funcionario funcionario = new Funcionario();
+            return funcionario;
+        }
+
+        public void salvarFuncionario(Funcionario funcionario)
+        {
+            _context.Funcionario.Add(funcionario);
+            _context.SaveChanges();
+        }
     }
 }

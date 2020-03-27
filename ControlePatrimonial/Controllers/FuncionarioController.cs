@@ -34,11 +34,6 @@ namespace ControlePatrimonial.Controllers
             return View(funcionarioViewModel);
         }
 
-        public ActionResult Funcionario_Cadastro()
-        {
-            return View();
-        }
-
         public IActionResult Funcionario_Detalhes(int idFuncionario)
         {
             var funcionario = _funcionarioRepository.Funcionarios.FirstOrDefault(e => e.IdFuncionario == idFuncionario);
@@ -50,5 +45,24 @@ namespace ControlePatrimonial.Controllers
 
             return View(funcionario);
         }
+
+        public ActionResult Funcionario_Cadastro()
+        {
+            var funcionarioViewModel = new FuncionarioViewModel();
+            funcionarioViewModel.funcionario = _funcionarioRepository.criarFuncionario();
+            funcionarioViewModel.Setores = _setorRepository.Setores;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Funcionario_Salvar(Models.Funcionario funcionario)
+        {
+            _funcionarioRepository.salvarFuncionario(funcionario);
+            return RedirectToAction("Funcionario_Lista");
+        }
+
+
+
     }
 }

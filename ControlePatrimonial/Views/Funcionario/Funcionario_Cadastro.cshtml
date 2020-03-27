@@ -1,0 +1,107 @@
+﻿@model FuncionarioViewModel
+
+@{
+    ViewData["Title"] = "Funcionario_Cadastro";
+}
+
+<div class="card-header" style="margin-top: -35px">
+    <h1 style="padding: 5px; border-radius: 5px; font-size: xx-large;">Cadastro de empresa</h1>
+</div>
+<div class="container-md row" style="margin-top: 30px">
+    <div class="form-group col-md-12 form-control-file" style="margin-top: 30px;">
+        <form asp-action="Funcionario_Salvar" method="post">
+
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+            <div class="form-row row col-md-12">
+
+                <div class="form-group col-md-2">
+                    <label asp-for="funcionario.DataCadastro" class="control-label"></label>
+                    <input asp-for="funcionario.DataCadastro" type="date" class="form-control" />
+                    <span asp-validation-for="funcionario.DataCadastro" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="control-label">CPF</label>
+                    <input asp-for="funcionario.CnpjCpf" class="form-control" />
+                    <span asp-validation-for="funcionario.CnpjCpf" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row row col-md-12">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Nome</label>
+                    <input asp-for="funcionario.Nome" class="form-control" />
+                    <span asp-validation-for="funcionario.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label">E-mail</label>
+                    <input asp-for="funcionario.Email" class="form-control" />
+                    <span asp-validation-for="funcionario.Email" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-row row col-md-12">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Rua</label>
+                    <input asp-for="funcionario.Rua" class="form-control" />
+                    <span asp-validation-for="funcionario.Rua" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="control-label">Bairro</label>
+                    <input asp-for="funcionario.Bairro" class="form-control" />
+                    <span asp-validation-for="funcionario.Bairro" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="control-label">Cidade</label>
+                    <input asp-for="funcionario.Cidade" class="form-control" />
+                    <span asp-validation-for="funcionario.Cidade" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row row col-md-12">
+                <div class="form-group col-md-2">
+                    <label class="control-label">CEP</label>
+                    <input asp-for="funcionario.Cep" class="form-control" />
+                    <span asp-validation-for="funcionario.Cep" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Complemento</label>
+                    <input asp-for="funcionario.Complemento" class="form-control" />
+                    <span asp-validation-for="funcionario.Complemento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label class="control-label">Tipo usuário</label>
+                    <input asp-for="funcionario.TipoUsuario" class="form-control" />
+                    <span asp-validation-for="funcionario.TipoUsuario" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="control-label">Telefone</label>
+                    <input asp-for="funcionario.Telefone" class="form-control" />
+                    <span asp-validation-for="funcionario.Telefone" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="control-label">Setor</label>
+                    <select asp-for="funcionario.Setor" class="form-control" asp-items="ViewBag.Nome"></select>
+                </div>
+            </div>
+            <div class="form-row col-md-12" style="margin-top: 10px;">
+                <div class="col-md-6" style="display: flex; justify-content:flex-start;">
+                    <a style="margin-right: 5px;" class="btn btn-primary btn-lg" asp-controller="Funcionario" asp-action="Funcionario_Lista">Voltar</a>
+                </div>
+                <div class="col-md-6" style="display: flex; justify-content:flex-end;">
+                    <input type="submit" value="Salvar" class="btn btn-primary btn-lg" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

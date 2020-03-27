@@ -41,39 +41,41 @@
             <tbody>
                 @foreach (var item in Model.Funcionairos)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TipoUsuario)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Telefone)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CnpjCpf)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DataCadastro)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Setor.Nome)
-                    </td>
-                    <td style="justify-content:flex-end;display:flex;">
-                        <a asp-route-IdFuncionario="@item.IdFuncionario" style="margin-right: 5px;" class="btn btn-info btn-sm" asp-area="" asp-controller="Funcionario" asp-action="Funcionario_Detalhes">Detalhes</a>
-                        <a asp-route-IdFuncionario="@item.IdFuncionario" style="margin-right: 5px;" class="btn btn-primary btn-sm" asp-area="" asp-controller="Funcionario" asp-action="Funcionario_Editar">Editar</a>
-                        <a asp-route-IdFuncionario="@item.IdFuncionario" style="margin-right: 5px;" class="btn btn-danger btn-sm" asp-area="" asp-controller="Funcionario" asp-action="Funcionario_Excluir">Excluir</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipoUsuario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CnpjCpf)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataCadastro)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Setor.Nome)
+                        </td>
+                        <td style="justify-content:flex-end;display:flex;">
+                            <a asp-route-IdFuncionario="@item.IdFuncionario" style="margin-right: 5px;" class="btn btn-info btn-sm" asp-area="" asp-controller="Funcionario" asp-action="Funcionario_Detalhes">Detalhes</a>
+                            <a asp-route-IdFuncionario="@item.IdFuncionario" style="margin-right: 5px;" class="btn btn-primary btn-sm" asp-area="" asp-controller="Funcionario" asp-action="Funcionario_Editar">Editar</a>
+                            <a asp-route-IdFuncionario="@item.IdFuncionario" style="margin-right: 5px;" class="btn btn-danger btn-sm" asp-area="" asp-controller="Funcionario" asp-action="Funcionario_Excluir">Excluir</a>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
-        <div class="form-group col-md-12" style="margin-top: 10px; justify-content:flex-start; display: flex">
-            <button asp-action="Create" type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+        <div class="form-group">
+            <div  style="margin-top: 10px; justify-content:flex-start; display: flex">
+                <a style="margin-right: 5px;" class="btn btn-primary btn-lg" asp-controller="Funcionario" asp-action="Funcionario_Cadastro">Adicionar</a>
+            </div>
         </div>
     </div>
 </div>

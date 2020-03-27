@@ -50,14 +50,16 @@ namespace ControlePatrimonial.Controllers.Empresa
         [HttpPost]
         public IActionResult Empresa_Salvar(Models.Empresa empresa)
         {
-            if (ModelState.IsValid)
-            {
-                _empresaRepository.salvarEmpresa(empresa);
-                return RedirectToAction("Empresa_Lista"); 
-            }
+            _empresaRepository.salvarEmpresa(empresa);
+            return RedirectToAction("Empresa_Lista"); 
+        }
 
+        public IActionResult Empresa_Excluir(int idEmpresa)
+        {
+            Models.Empresa empresa = _empresaRepository.GetEmpresaById(idEmpresa);
 
-            return View("~/Views/Empresa/Empresa_Lista.cshtml");
+            _empresaRepository.excluirEmpresa(empresa);
+            return RedirectToAction("Empresa_Lista");
         }
 
     }

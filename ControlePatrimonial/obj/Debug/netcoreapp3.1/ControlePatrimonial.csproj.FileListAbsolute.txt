@@ -160,3 +160,4 @@ D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Empresa\Empresa_Detalhes.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Detalhes.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Setor\Setor_Detalhes.cshtml.g.cs
+D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Cadastro.cshtml.g.cs

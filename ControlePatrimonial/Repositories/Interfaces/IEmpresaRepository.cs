@@ -12,6 +12,7 @@ namespace ControlePatrimonial.Repositories
         IEnumerable<Empresa> Empresas { get; }
         Empresa GetEmpresaById(int EmpresaId);
         void salvarEmpresa(Empresa empresa);
+        void excluirEmpresa(Empresa empresa);
         Empresa criarEmpresa();
     }
 }

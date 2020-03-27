@@ -10,5 +10,6 @@ namespace ControlePatrimonial.ViewModel
     {
         public IEnumerable<Funcionario> Funcionairos { get; set; }
         public IEnumerable<Setor> Setores { get; set; }
+        public Funcionario funcionario { get; set; }
     }
 }
