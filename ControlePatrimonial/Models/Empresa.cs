@@ -16,7 +16,7 @@ namespace ControlePatrimonial.Models
 
         [StringLength(14)]
         [Display(Name = "CnpjCpf")]
-        [Required(ErrorMessage = "Cnpj da empresa")]
+        [Required(ErrorMessage = "Informe o CNPJ da empresa")]
         public string CnpjCpf { get; set; }
 
         [StringLength(20)]
