@@ -26,11 +26,11 @@ namespace ControlePatrimonial.Controllers
             ViewData["Empresa"] = "Empresa";
 
             //var setores = _setorRepository.Setores;
-            var setorListaViewModel = new SetorListaViewModel();
-            setorListaViewModel.Setores = _setorRepository.Setores;
-            setorListaViewModel.Empresas = _empresaRepository.Empresas;
+            var setorViewModel = new SetorViewModel();
+            setorViewModel.Setores = _setorRepository.Setores;
+            setorViewModel.Empresas = _empresaRepository.Empresas;
 
-            return View(setorListaViewModel);
+            return View(setorViewModel);
         }
 
         public ActionResult Setor_Cadastro()

@@ -152,7 +152,6 @@ D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Contro
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\ControlePatrimonial.MvcApplicationPartsAssemblyInfo.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\ControlePatrimonial.MvcApplicationPartsAssemblyInfo.cache
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Empresa\Empresa_Cadastro.cshtml.g.cs
-D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Cadastro.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Setor\Setor_Cadastro.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Empresa\Empresa_Lista.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Lista.cshtml.g.cs

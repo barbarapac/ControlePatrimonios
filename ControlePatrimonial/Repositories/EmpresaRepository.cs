@@ -23,5 +23,19 @@ namespace ControlePatrimonial.Repositories
         {
             return _context.Empresa.FirstOrDefault(e => e.IdEmpresa == EmpresaId);
         }
+
+        public Empresa criarEmpresa()
+        {
+            Empresa empresa = new Empresa();
+            empresa.DataCadastro = DateTime.Now;
+
+            return empresa;
+        }
+        public void salvarEmpresa(Empresa empresa)
+        {
+            _context.Empresa.Add(empresa);
+            _context.SaveChanges();
+        }
+
     }
 }

@@ -11,5 +11,7 @@ namespace ControlePatrimonial.Repositories
         // Lista empresas;
         IEnumerable<Empresa> Empresas { get; }
         Empresa GetEmpresaById(int EmpresaId);
+        void salvarEmpresa(Empresa empresa);
+        Empresa criarEmpresa();
     }
 }

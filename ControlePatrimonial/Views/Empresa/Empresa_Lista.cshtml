@@ -1,4 +1,4 @@
-﻿@model EmpresaListaViewModel
+﻿@model EmpresaViewModel
 
 @{
     ViewData["Title"] = "Empresa_Lista";
@@ -35,33 +35,35 @@
             <tbody>
                 @foreach (var item in Model.Empresas)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NomeFantasia)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RazaoSocial)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CnpjCpf)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Tipo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DataCadastro)
-                    </td>
-                    <td style="justify-content:flex-end;display:flex;">
-                        <a asp-route-idEmpresa="@item.IdEmpresa" style="margin-right: 5px;" class="btn btn-info btn-sm" asp-area="" asp-controller="Empresa" asp-action="Empresa_Detalhes">Detalhes</a>
-                        <a asp-route-idEmpresa="@item.IdEmpresa" style="margin-right: 5px;" class="btn btn-primary btn-sm" asp-area="" asp-controller="Empresa" asp-action="Empresa_Editar">Editar</a>
-                        <a asp-route-idEmpresa="@item.IdEmpresa" style="margin-right: 5px;" class="btn btn-danger btn-sm" asp-area="" asp-controller="Empresa" asp-action="Empresa_Excluir">Excluir</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NomeFantasia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RazaoSocial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CnpjCpf)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataCadastro)
+                        </td>
+                        <td style="justify-content:flex-end;display:flex;">
+                            <a asp-route-idEmpresa="@item.IdEmpresa" style="margin-right: 5px;" class="btn btn-info btn-sm" asp-area="" asp-controller="Empresa" asp-action="Empresa_Detalhes">Detalhes</a>
+                            <a asp-route-idEmpresa="@item.IdEmpresa" style="margin-right: 5px;" class="btn btn-primary btn-sm" asp-area="" asp-controller="Empresa" asp-action="Empresa_Editar">Editar</a>
+                            <a asp-route-idEmpresa="@item.IdEmpresa" style="margin-right: 5px;" class="btn btn-danger btn-sm" asp-area="" asp-controller="Empresa" asp-action="Empresa_Excluir">Excluir</a>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
-        <div class="form-group col-md-12" style="margin-top: 10px; justify-content:flex-start; display: flex">
-            <button asp-action="Create" type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+        <div class="form-group">
+            <div class="btn btn-group" style="margin-top: 10px; justify-content:flex-end; display: flex">
+                <a style="margin-right: 5px;" class="btn btn-info btn-sm" asp-controller="Empresa" asp-action="Empresa_Cadastro">Adicionar</a>
+            </div>
         </div>
     </div>
 </div>

@@ -6,8 +6,9 @@ using ControlePatrimonial.Models;
 
 namespace ControlePatrimonial.ViewModel
 {
-    public class EmpresaListaViewModel
+    public class FuncionarioViewModel
     {
-        public IEnumerable<Empresa> Empresas { get; set; }
+        public IEnumerable<Funcionario> Funcionairos { get; set; }
+        public IEnumerable<Setor> Setores { get; set; }
     }
 }

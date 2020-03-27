@@ -27,11 +27,11 @@ namespace ControlePatrimonial.Controllers
             ViewData["Setor"] = "Setor";
 
             //var funcionarios = _funcionarioRepository.Funcionarios;
-            var funcionarioListaViewModel = new FuncionarioListaViewModel();
-            funcionarioListaViewModel.Funcionairos = _funcionarioRepository.Funcionarios;
-            funcionarioListaViewModel.Setores = _setorRepository.Setores;
+            var funcionarioViewModel = new FuncionarioViewModel();
+            funcionarioViewModel.Funcionairos = _funcionarioRepository.Funcionarios;
+            funcionarioViewModel.Setores = _setorRepository.Setores;
 
-            return View(funcionarioListaViewModel);
+            return View(funcionarioViewModel);
         }
 
         public ActionResult Funcionario_Cadastro()
