@@ -19,7 +19,7 @@ namespace ControlePatrimonial.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult SobreSistema()
         {
             return View();
         }

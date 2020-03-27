@@ -17,7 +17,7 @@ namespace ControlePatrimonial.Repositories
             _context = contexto;
         }
 
-        public IEnumerable<Empresa> Empresas => _context.Empresa.Include(e => e.Funcionario).Include(s => s.Setor);
+        public IEnumerable<Empresa> Empresas => _context.Empresa;
 
         public Empresa GetEmpresaById(int EmpresaId)
         {

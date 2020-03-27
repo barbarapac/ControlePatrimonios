@@ -29,5 +29,7 @@ namespace ControlePatrimonial.Models
         [StringLength(14)]
         public string CnpjCpf { get; set; }
         public DateTime DataCadastro { get; set; }
+        public int SetorId { get; set; }
+        public virtual Setor Setor { get; set; }
     }
 }

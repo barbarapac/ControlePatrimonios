@@ -26,8 +26,15 @@ using ControlePatrimonial.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\GitHub\ControlePatrimonios\ControlePatrimonial\Views\_ViewImports.cshtml"
+using ControlePatrimonial.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"30c2e4375d0d4b39a5e3299cda3610282af9e9c5", @"/Views/Empresa/Empresa_Cadastro.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e49b94227df319ec1d0aec130f1c74a25c1158a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e982d0201190981cd89e2abbb515e4fa6ae5632", @"/Views/_ViewImports.cshtml")]
     public class Views_Empresa_Empresa_Cadastro : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ControlePatrimonial.Models.Empresa>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("Empresa_Cadastro"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +75,7 @@ using ControlePatrimonial.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n<div class=\"container-md\">\r\n    <div class=\"card-header\" style=\"margin-top: -35px\">\r\n        <h1 style=\"padding: 5px; border-radius: 5px; font-size: xx-large;\">Cadastro de empresa</h1>\r\n    </div>\r\n    <div style=\"margin-top: 30px\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30c2e4375d0d4b39a5e3299cda3610282af9e9c54531", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30c2e4375d0d4b39a5e3299cda3610282af9e9c54725", async() => {
                 WriteLiteral(@"
             <div class=""form-group col-md-12 form-control-file"" style=""margin-top: 30px;"">
 

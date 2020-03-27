@@ -1,0 +1,105 @@
+﻿@model ControlePatrimonial.Models.Empresa
+
+@{
+    ViewData["Title"] = "Empresa_Detalhes";
+}
+
+<div class="card-header" style="margin-top: -35px">
+    <h1 style="padding: 5px; border-radius: 5px; font-size: xx-large;">Empresas</h1>
+</div>
+
+<div style="display:flex; justify-content:center">
+    <div class="col-sm-9 col-lg-9 col-md-9" style="margin-top: 50px">
+        <hr />
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                Nome fantasia:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NomeFantasia)
+            </dd>
+
+            <dt class="col-sm-2">
+                CNPJ/CPF
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CnpjCpf)
+            </dd>
+
+            <dt class="col-sm-2">
+                CEP:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
+
+            <dt class="col-sm-2">
+                Razao social:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RazaoSocial)
+            </dd>
+
+            <dt class="col-sm-2">
+                Telefone:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+
+            <dt class="col-sm-2">
+                Rua:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Rua)
+            </dd>
+
+            <dt class="col-sm-2">
+                Bairro
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+
+            <dt class="col-sm-2">
+                Cidade
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+
+            <dt class="col-sm-2">
+                Número
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+
+            <dt class="col-sm-2">
+                Complemento:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Complemento)
+            </dd>
+
+            <dt class="col-sm-2">
+                Tipo empresa:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Tipo)
+            </dd>
+
+            <dt class="col-sm-2">
+                Data de cadastro:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DataCadastro)
+            </dd>
+        </dl>
+        <div>
+            <a class="btn btn-primary" asp-controller="Empresa" asp-action="Empresa_Lista">Voltar</a>
+            <a class="btn btn-info" asp-controller="Empresa" asp-action="Empresa_editar" asp-route-idEmpresa="@Model.IdEmpresa" style="margin-right: 5px;">Editar</a>
+        </div>
+    </div>
+</div>

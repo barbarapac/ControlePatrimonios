@@ -26,8 +26,15 @@ using ControlePatrimonial.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\GitHub\ControlePatrimonios\ControlePatrimonial\Views\_ViewImports.cshtml"
+using ControlePatrimonial.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d38a7b711f00100761c335ba2d6d67a2497a9e77", @"/Views/Setor/Setor_Cadastro.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e49b94227df319ec1d0aec130f1c74a25c1158a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e982d0201190981cd89e2abbb515e4fa6ae5632", @"/Views/_ViewImports.cshtml")]
     public class Views_Setor_Setor_Cadastro : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ControlePatrimonial.Models.Setor>>
     {
         #pragma warning disable 1998

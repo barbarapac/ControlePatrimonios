@@ -61,7 +61,6 @@ D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Contro
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\ControlePatrimonial.TagHelpers.output.cache
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\ControlePatrimonial.RazorCoreGenerate.cache
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -158,3 +157,7 @@ D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Empresa\Empresa_Lista.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Lista.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Setor\Setor_Lista.cshtml.g.cs
+D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Home\SobreSistema.cshtml.g.cs
+D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Empresa\Empresa_Detalhes.cshtml.g.cs
+D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Detalhes.cshtml.g.cs
+D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Setor\Setor_Detalhes.cshtml.g.cs

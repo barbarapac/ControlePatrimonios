@@ -26,8 +26,15 @@ using ControlePatrimonial.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\GitHub\ControlePatrimonios\ControlePatrimonial\Views\_ViewImports.cshtml"
+using ControlePatrimonial.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6ec885edfe29123c446f33393fe3d8e9a92ac540", @"/Views/Funcionario/Funcionario_Cadastro.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e49b94227df319ec1d0aec130f1c74a25c1158a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e982d0201190981cd89e2abbb515e4fa6ae5632", @"/Views/_ViewImports.cshtml")]
     public class Views_Funcionario_Funcionario_Cadastro : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ControlePatrimonial.Models.Funcionario>>
     {
         #pragma warning disable 1998

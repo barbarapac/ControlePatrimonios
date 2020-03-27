@@ -1,0 +1,92 @@
+﻿@model ControlePatrimonial.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Funcionario_Detalhes";
+}
+
+<div class="card-header" style="margin-top: -35px">
+    <h1 style="padding: 5px; border-radius: 5px; font-size: xx-large;">Funcionário</h1>
+</div>
+
+<div style="display:flex; justify-content:center">
+    <div class="col-sm-9 col-lg-9 col-md-9" style="margin-top: 50px">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cep)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TipoUsuario)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoUsuario)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Rua)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Rua)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Bairro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Complemento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Complemento)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CnpjCpf)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CnpjCpf)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DataCadastro)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Setor)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Setor.Nome)
+            </dd>
+        </dl>
+        <div>
+            <a class="btn btn-primary" asp-controller="Empresa" asp-action="Empresa_Lista">Voltar</a>
+            <a class="btn btn-info" asp-controller="Empresa" asp-action="Empresa_editar" asp-route-idEmpresa="@Model.IdFuncionario" style="margin-right: 5px;">Editar</a>
+        </div>
+    </div>
+</div>

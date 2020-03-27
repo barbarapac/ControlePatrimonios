@@ -26,6 +26,14 @@
     <Compile Remove="Migrations\20200325231928_MigracaoInicial.Designer.cs" />
     <Compile Remove="Migrations\20200325232001_PopulandoTabelas.cs" />
     <Compile Remove="Migrations\20200325232001_PopulandoTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200325232515_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200325232515_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200325232541_PopulandoTabelas.cs" />
+    <Compile Remove="Migrations\20200325232541_PopulandoTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200326221901_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200326221901_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200326222107_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200326222107_MigracaoInicial.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

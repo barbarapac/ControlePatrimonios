@@ -13,6 +13,8 @@ namespace ControlePatrimonial.Models
         [StringLength(50)]
         public string Localizacao { get; set; }
         public DateTime DataCadastro { get; set; }
-        public virtual List<Funcionario> Funcionario { get; set; }
+        public int EmpresaId { get; set; }
+        public virtual Empresa Empresa { get; set; }
+        public List<Funcionario> Funcionario { get; set; }
     }
 }

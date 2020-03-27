@@ -113,9 +113,6 @@ namespace ControlePatrimonial.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int?>("EmpresaIdEmpresa")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
@@ -124,7 +121,7 @@ namespace ControlePatrimonial.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int?>("SetorIdSetor")
+                    b.Property<int>("SetorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Telefone")
@@ -137,9 +134,7 @@ namespace ControlePatrimonial.Migrations
 
                     b.HasKey("IdFuncionario");
 
-                    b.HasIndex("EmpresaIdEmpresa");
-
-                    b.HasIndex("SetorIdSetor");
+                    b.HasIndex("SetorId");
 
                     b.ToTable("Funcionario");
                 });
@@ -154,7 +149,7 @@ namespace ControlePatrimonial.Migrations
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("EmpresaIdEmpresa")
+                    b.Property<int>("EmpresaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Localizacao")
@@ -167,27 +162,27 @@ namespace ControlePatrimonial.Migrations
 
                     b.HasKey("IdSetor");
 
-                    b.HasIndex("EmpresaIdEmpresa");
+                    b.HasIndex("EmpresaId");
 
                     b.ToTable("Setor");
                 });
 
             modelBuilder.Entity("ControlePatrimonial.Models.Funcionario", b =>
                 {
-                    b.HasOne("ControlePatrimonial.Models.Empresa", null)
+                    b.HasOne("ControlePatrimonial.Models.Setor", "Setor")
                         .WithMany("Funcionario")
-                        .HasForeignKey("EmpresaIdEmpresa");
-
-                    b.HasOne("ControlePatrimonial.Models.Setor", null)
-                        .WithMany("Funcionario")
-                        .HasForeignKey("SetorIdSetor");
+                        .HasForeignKey("SetorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ControlePatrimonial.Models.Setor", b =>
                 {
-                    b.HasOne("ControlePatrimonial.Models.Empresa", null)
-                        .WithMany("Setor")
-                        .HasForeignKey("EmpresaIdEmpresa");
+                    b.HasOne("ControlePatrimonial.Models.Empresa", "Empresa")
+                        .WithMany("Setores")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

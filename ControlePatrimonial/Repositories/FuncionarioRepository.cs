@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ControlePatrimonial.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControlePatrimonial.Repositories
 {
@@ -16,7 +17,7 @@ namespace ControlePatrimonial.Repositories
             _context = contexto;
         }
 
-        public IEnumerable<Funcionario> Funcionarios => _context.Funcionario;
+        public IEnumerable<Funcionario> Funcionarios => _context.Funcionario.Include(s => s.Setor) ;
 
         public Funcionario GetFuncionarioById(int FuncionarioId)
         {

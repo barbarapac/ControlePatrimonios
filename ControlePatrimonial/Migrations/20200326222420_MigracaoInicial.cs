@@ -40,17 +40,17 @@ namespace ControlePatrimonial.Migrations
                     Nome = table.Column<string>(maxLength: 100, nullable: true),
                     Localizacao = table.Column<string>(maxLength: 50, nullable: true),
                     DataCadastro = table.Column<DateTime>(nullable: false),
-                    EmpresaIdEmpresa = table.Column<int>(nullable: true)
+                    EmpresaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Setor", x => x.IdSetor);
                     table.ForeignKey(
-                        name: "FK_Setor_Empresa_EmpresaIdEmpresa",
-                        column: x => x.EmpresaIdEmpresa,
+                        name: "FK_Setor_Empresa_EmpresaId",
+                        column: x => x.EmpresaId,
                         principalTable: "Empresa",
                         principalColumn: "IdEmpresa",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,40 +70,28 @@ namespace ControlePatrimonial.Migrations
                     Complemento = table.Column<string>(maxLength: 100, nullable: true),
                     CnpjCpf = table.Column<string>(maxLength: 14, nullable: true),
                     DataCadastro = table.Column<DateTime>(nullable: false),
-                    EmpresaIdEmpresa = table.Column<int>(nullable: true),
-                    SetorIdSetor = table.Column<int>(nullable: true)
+                    SetorId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Funcionario", x => x.IdFuncionario);
                     table.ForeignKey(
-                        name: "FK_Funcionario_Empresa_EmpresaIdEmpresa",
-                        column: x => x.EmpresaIdEmpresa,
-                        principalTable: "Empresa",
-                        principalColumn: "IdEmpresa",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Funcionario_Setor_SetorIdSetor",
-                        column: x => x.SetorIdSetor,
+                        name: "FK_Funcionario_Setor_SetorId",
+                        column: x => x.SetorId,
                         principalTable: "Setor",
                         principalColumn: "IdSetor",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Funcionario_EmpresaIdEmpresa",
+                name: "IX_Funcionario_SetorId",
                 table: "Funcionario",
-                column: "EmpresaIdEmpresa");
+                column: "SetorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Funcionario_SetorIdSetor",
-                table: "Funcionario",
-                column: "SetorIdSetor");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Setor_EmpresaIdEmpresa",
+                name: "IX_Setor_EmpresaId",
                 table: "Setor",
-                column: "EmpresaIdEmpresa");
+                column: "EmpresaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

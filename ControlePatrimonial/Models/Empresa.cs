@@ -30,8 +30,7 @@ namespace ControlePatrimonial.Models
         public string Complemento { get; set; }
         [StringLength(10)]
         public char Tipo { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public virtual List<Funcionario> Funcionario { get; set; }
-        public virtual List<Setor> Setor { get; set; }
+        public DateTime DataCadastro { get; set; }        
+        public List<Setor> Setores { get; set; }
     }
 }
