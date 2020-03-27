@@ -35,5 +35,10 @@ namespace ControlePatrimonial.Repositories
             _context.Funcionario.Add(funcionario);
             _context.SaveChanges();
         }
+        public void excluirFuncionario(Funcionario funcionario)
+        {
+            _context.Funcionario.Remove(funcionario);
+            _context.SaveChanges();
+        }
     }
 }

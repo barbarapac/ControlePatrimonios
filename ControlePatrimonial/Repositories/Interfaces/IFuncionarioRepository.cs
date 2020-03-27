@@ -12,5 +12,6 @@ namespace ControlePatrimonial.Repositories
         Funcionario GetFuncionarioById(int FuncionarioId);
         public Funcionario criarFuncionario();
         public void salvarFuncionario(Funcionario funcionario);
+        void excluirFuncionario(Funcionario funcionario);
     }
 }

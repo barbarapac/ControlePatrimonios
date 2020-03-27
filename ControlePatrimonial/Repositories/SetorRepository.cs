@@ -23,5 +23,22 @@ namespace ControlePatrimonial.Repositories
         {
             return _context.Setor.FirstOrDefault(s => s.IdSetor == setorId);
         }
+        public Setor criarSetor()
+        {
+            Setor setor = new Setor();
+            return setor;
+        }
+
+        public void salvarSetor(Setor setor)
+        {
+            _context.Setor.Add(setor);
+            _context.SaveChanges();
+        }
+
+        public void excluirSetor(Setor setor)
+        {
+            _context.Setor.Remove(setor);
+            _context.SaveChanges();
+        }
     }
 }

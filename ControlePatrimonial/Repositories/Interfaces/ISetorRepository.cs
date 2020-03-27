@@ -10,5 +10,8 @@ namespace ControlePatrimonial.Repositories
     {
         IEnumerable <Setor> Setores { get; }
         Setor GetSetorById(int setorId);
+        public Setor criarSetor();
+        public void salvarSetor(Setor setor);
+        void excluirSetor(Setor setor);
     }
 }

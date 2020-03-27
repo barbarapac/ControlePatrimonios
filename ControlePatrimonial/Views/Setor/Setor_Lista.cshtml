@@ -48,14 +48,16 @@
                         <td style="justify-content:flex-end;display:flex;">
                             <a asp-route-IdSetor="@item.IdSetor" style="margin-right: 5px;" class="btn btn-info btn-sm" asp-area="" asp-controller="Setor" asp-action="Setor_Detalhes">Detalhes</a>
                             <a asp-route-IdSetor="@item.IdSetor" style="margin-right: 5px;" class="btn btn-primary btn-sm" asp-area="" asp-controller="Setor" asp-action="Setor_Editar">Editar</a>
-                            <a asp-route-idSetor="@item.IdSetor" style="margin-right: 5px;" class="btn btn-danger btn-sm" asp-area="" asp-controller="Setor" asp-action="Setor_Excluir">Excluir</a>
+                            <a asp-route-IdSetor="@item.IdSetor" style="margin-right: 5px;" class="btn btn-danger btn-sm" asp-area="" asp-controller="Setor" asp-action="Setor_Excluir">Excluir</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-        <div class="form-group col-md-12" style="margin-top: 10px; justify-content:flex-start; display: flex">
-            <button asp-action="Create" type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+        <div class="form-group">
+            <div style="margin-top: 10px; justify-content:flex-start; display: flex">
+                <a style="margin-right: 5px;" class="btn btn-primary btn-lg" asp-controller="Setor" asp-action="Setor_Cadastro">Adicionar</a>
+            </div>
         </div>
     </div>
 </div>

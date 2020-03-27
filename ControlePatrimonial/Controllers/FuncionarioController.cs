@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ControlePatrimonial.Repositories;
 using ControlePatrimonial.ViewModel;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ControlePatrimonial.Controllers
 {
@@ -48,6 +48,10 @@ namespace ControlePatrimonial.Controllers
 
         public ActionResult Funcionario_Cadastro()
         {
+            ViewBag.Funcionario = "Funcionario";
+            ViewBag.Setores = _setorRepository.Setores.Select(e => new SelectListItem() { Text = e.Nome, Value = e.IdSetor.ToString() }).ToList();
+
+
             var funcionarioViewModel = new FuncionarioViewModel();
             funcionarioViewModel.funcionario = _funcionarioRepository.criarFuncionario();
             funcionarioViewModel.Setores = _setorRepository.Setores;
@@ -62,7 +66,12 @@ namespace ControlePatrimonial.Controllers
             return RedirectToAction("Funcionario_Lista");
         }
 
+        public IActionResult Funcionario_Excluir(int idFuncionairo)
+        {
+            Models.Funcionario funcionario = _funcionarioRepository.GetFuncionarioById(idFuncionairo);
 
-
+            _funcionarioRepository.excluirFuncionario(funcionario);
+            return RedirectToAction("Funcionario_Lista");
+        }
     }
 }

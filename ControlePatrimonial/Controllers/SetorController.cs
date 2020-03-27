@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ControlePatrimonial.Repositories;
 using ControlePatrimonial.ViewModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ControlePatrimonial.Controllers
 {
@@ -22,7 +23,7 @@ namespace ControlePatrimonial.Controllers
 
         public IActionResult Setor_Lista()
         {
-            ViewBag.Funcionario = "Setor";
+            ViewBag.Setor = "Setor";
             ViewData["Empresa"] = "Empresa";
 
             //var setores = _setorRepository.Setores;
@@ -35,7 +36,20 @@ namespace ControlePatrimonial.Controllers
 
         public ActionResult Setor_Cadastro()
         {
+            ViewBag.Setor = "Setor";
+            ViewBag.Empresas = _empresaRepository.Empresas.Select(e => new SelectListItem() { Text = e.RazaoSocial, Value=e.IdEmpresa.ToString() }).ToList();
+
+            var setorViewModel = new SetorViewModel();
+            setorViewModel.setor = _setorRepository.criarSetor();
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Setor_Salvar(Models.Setor setor)
+        {
+            _setorRepository.salvarSetor(setor);
+            return RedirectToAction("Setor_Lista");
         }
 
         public IActionResult Setor_Detalhes(int idSetor)
@@ -48,6 +62,14 @@ namespace ControlePatrimonial.Controllers
             }
 
             return View(setor);
+        }
+
+        public IActionResult Setor_Excluir(int idSetor)
+        {
+            Models.Setor setor = _setorRepository.GetSetorById(idSetor);
+
+            _setorRepository.excluirSetor(setor);
+            return RedirectToAction("Setor_Lista");
         }
 
     }
