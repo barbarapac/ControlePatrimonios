@@ -78,10 +78,10 @@ namespace ControlePatrimonial.Controllers
         {
             try
             {
+                var funcionarioViewModel = new FuncionarioViewModel();
                 ViewBag.Funcionario = "Funcionario";
                 ViewBag.Setores = _setorRepository.Setores.Select(e => new SelectListItem() { Text = e.Nome, Value = e.IdSetor.ToString() }).ToList();
 
-                var funcionarioViewModel = new FuncionarioViewModel();
                 Models.Funcionario funcionario = _funcionarioRepository.GetFuncionarioById(idFuncionario);
                 funcionarioViewModel.funcionario = funcionario;
                 funcionarioViewModel.Setores = _setorRepository.Setores;

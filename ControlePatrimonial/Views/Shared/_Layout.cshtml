@@ -13,23 +13,17 @@
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
-                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Controle Patrimonial</a>
                 </li>
             </ul>
         </div>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </nav>
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#menu-toggle">
-                        Menu
-                    </a>
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" asp-area="" asp-controller="Empresa" asp-action="Empresa_Lista">Empresas</a>
@@ -43,7 +37,7 @@
             </ul>
         </div>
         <div id="page-content-wrapper">
-            <a href="#menu-toggle" class="btn btn-outline-dark" id="menu-toggle" style="margin-right: 150px;">></a>
+            <a href="#menu-toggle" class="btn btn-outline-dark" id="menu-toggle" style="margin-right: 150px;">Menu</a>
             <div class="container-fluid" style="display: block; justify-content: center; width: 90%;">
                 <main role="main" class="pb-3">
                     @RenderBody()

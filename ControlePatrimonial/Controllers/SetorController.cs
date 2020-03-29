@@ -48,7 +48,7 @@ namespace ControlePatrimonial.Controllers
         [HttpPost]
         public IActionResult Setor_Salvar(Models.Setor setor)
         {
-            _setorRepository.salvarSetor(setor);
+            _setorRepository.salvarSetor(setor, false);
             return RedirectToAction("Setor_Lista");
         }
 
@@ -71,6 +71,39 @@ namespace ControlePatrimonial.Controllers
             _setorRepository.excluirSetor(setor);
             return RedirectToAction("Setor_Lista");
         }
+        public IActionResult Setor_Edicao(int idSetor)
+        {
+            try
+            {
+                var setorViewModel = new SetorViewModel();
+                ViewBag.Setor = "Setor";
+                ViewBag.Empresas = _empresaRepository.Empresas.Select(e => new SelectListItem() { Text = e.RazaoSocial, Value = e.IdEmpresa.ToString() }).ToList();
 
+                Models.Setor setor = _setorRepository.GetSetorById(idSetor);
+                setorViewModel.setor = setor;
+                setorViewModel.Empresas = _empresaRepository.Empresas;
+
+                return View(setorViewModel);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Setor_SalvarEdicao(SetorViewModel setorViewMode)
+        {
+            try
+            {
+                Models.Setor setor = setorViewMode.setor;
+                _setorRepository.salvarSetor(setor, true);
+                return RedirectToAction("Setor_Lista");
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+        }
     }
 }

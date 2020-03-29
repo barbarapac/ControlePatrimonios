@@ -10,6 +10,6 @@ namespace ControlePatrimonial.ViewModel
     {
         public IEnumerable<Setor> Setores { get; set; }
         public IEnumerable<Empresa> Empresas { get; set; }
-        public Setor  setor { get; set; }
+        public Setor setor { get; set; }
     }
 }

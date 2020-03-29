@@ -163,3 +163,4 @@ D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Contro
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\ControlePatrimonial.MvcApplicationPartsAssemblyInfo.cache
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Empresa\Empresa_Edicao.cshtml.g.cs
 D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\Funcionario_Edicao.cshtml.g.cs
+D:\GitHub\ControlePatrimonios\ControlePatrimonial\obj\Debug\netcoreapp3.1\Razor\Views\Setor\Setor_Edicao.cshtml.g.cs

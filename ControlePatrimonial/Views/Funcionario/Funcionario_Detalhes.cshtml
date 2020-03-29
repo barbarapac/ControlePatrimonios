@@ -12,81 +12,92 @@
     <div class="col-sm-9 col-lg-9 col-md-9" style="margin-top: 50px">
         <dl class="row">
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Nome)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Email)
+               E-mail:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Email)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Cep)
+                CEP:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Cep)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.TipoUsuario)
+                Tipo usuário:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.TipoUsuario)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Telefone)
+                Telefone:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Telefone)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Rua)
+                Rua:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Rua)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Bairro)
+                Bairro:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Bairro)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Cidade)
+                Cidade:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Cidade)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Complemento)
+                Complemento:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Complemento)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.CnpjCpf)
+                CPF:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.CnpjCpf)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.DataCadastro)
+                Data de Cadastro:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.DataCadastro)
             </dd>
+
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Setor)
+                Setor:
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Setor.Nome)
             </dd>
         </dl>
         <div>
-            <a class="btn btn-primary" asp-controller="Empresa" asp-action="Empresa_Lista">Voltar</a>
-            <a class="btn btn-info" asp-controller="Empresa" asp-action="Empresa_editar" asp-route-idEmpresa="@Model.IdFuncionario" style="margin-right: 5px;">Editar</a>
+            <a class="btn btn-primary" asp-controller="Funcionario" asp-action="Funcionario_Lista">Voltar</a>
+            <a class="btn btn-info" asp-controller="Funcionario" asp-action="Funcionario_Edicao" asp-route-idFuncionario="@Model.IdFuncionario" style="margin-right: 5px;">Editar</a>
         </div>
     </div>
 </div>

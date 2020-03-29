@@ -1,7 +1,7 @@
 ﻿@model SetorViewModel
 
 @{
-    ViewData["Title"] = "Setor_Cadastro";
+    ViewData["Title"] = "Setor_Edicao";
 }
 
 <div class="card-header" style="margin-top: -35px">
@@ -9,13 +9,18 @@
 </div>
 <div class="container-md row" style="margin-top: 30px">
     <div class="form-group col-md-12 form-control-file" style="margin-top: 30px;">
-        <form asp-action="Setor_Salvar" method="post">
+        <form asp-action="Setor_SalvarEdicao" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-row row col-md-12">
+                <div class="form-group col-md-1">
+                    <label class="control-label">Código</label>
+                    <input asp-for="setor.IdSetor" class="form-control" readonly />
+                    <span asp-validation-for="setor.IdSetor" class="text-danger"></span>
+                </div>
                 <div class="form-group col-md-2">
                     <label class="control-label">Data de cadastro</label>
-                    <input asp-for="setor.DataCadastro" type="date" class="form-control" />
+                    <input asp-for="setor.DataCadastro" class="form-control" readonly/>
                     <span asp-validation-for="setor.DataCadastro" class="text-danger"></span>
                 </div>
             </div>
@@ -38,7 +43,6 @@
                     <select asp-for="setor.EmpresaId" class="form-control" asp-items="ViewBag.Empresas"></select>
                 </div>
             </div>
-
             <div class="form-row col-md-12" style="margin-top: 10px;">
                 <div class="col-md-3" style="display: flex; justify-content:flex-start;">
                     <a style="margin-right: 5px;" class="btn btn-primary btn-lg" asp-controller="Setor" asp-action="Setor_Lista">Voltar</a>
@@ -51,6 +55,6 @@
     </div>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

@@ -29,10 +29,17 @@ namespace ControlePatrimonial.Repositories
             return setor;
         }
 
-        public void salvarSetor(Setor setor)
+        public void salvarSetor(Setor setor, bool IsEdicao)
         {
-            _context.Setor.Add(setor);
-            _context.SaveChanges();
+            if (IsEdicao)
+            {
+                _context.Setor.UpdateRange(setor);
+                _context.SaveChanges();
+            } else
+            {
+                _context.Setor.Add(setor);
+                _context.SaveChanges();
+            }
         }
 
         public void excluirSetor(Setor setor)
