@@ -11,7 +11,7 @@ namespace ControlePatrimonial.Repositories
         IEnumerable<Funcionario> Funcionarios { get; }
         Funcionario GetFuncionarioById(int FuncionarioId);
         public Funcionario criarFuncionario();
-        public void salvarFuncionario(Funcionario funcionario);
+        public void salvarFuncionario(Funcionario funcionario, bool idEdicao);
         void excluirFuncionario(Funcionario funcionario);
     }
 }

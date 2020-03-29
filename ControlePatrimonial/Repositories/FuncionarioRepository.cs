@@ -30,10 +30,18 @@ namespace ControlePatrimonial.Repositories
             return funcionario;
         }
 
-        public void salvarFuncionario(Funcionario funcionario)
+        public void salvarFuncionario(Funcionario funcionario, bool isEdicao)
         {
-            _context.Funcionario.Add(funcionario);
-            _context.SaveChanges();
+            if (isEdicao)
+            {
+                _context.Funcionario.UpdateRange(funcionario);
+                _context.SaveChanges();
+            }
+            else
+            {
+                _context.Funcionario.Add(funcionario);
+                _context.SaveChanges();
+            }
         }
         public void excluirFuncionario(Funcionario funcionario)
         {

@@ -62,7 +62,7 @@ namespace ControlePatrimonial.Controllers
         [HttpPost]
         public IActionResult Funcionario_Salvar(Models.Funcionario funcionario)
         {
-            _funcionarioRepository.salvarFuncionario(funcionario);
+            _funcionarioRepository.salvarFuncionario(funcionario, false);
             return RedirectToAction("Funcionario_Lista");
         }
 
@@ -72,6 +72,41 @@ namespace ControlePatrimonial.Controllers
 
             _funcionarioRepository.excluirFuncionario(funcionario);
             return RedirectToAction("Funcionario_Lista");
+        }
+
+        public IActionResult Funcionario_Edicao(int idFuncionario)
+        {
+            try
+            {
+                ViewBag.Funcionario = "Funcionario";
+                ViewBag.Setores = _setorRepository.Setores.Select(e => new SelectListItem() { Text = e.Nome, Value = e.IdSetor.ToString() }).ToList();
+
+                var funcionarioViewModel = new FuncionarioViewModel();
+                Models.Funcionario funcionario = _funcionarioRepository.GetFuncionarioById(idFuncionario);
+                funcionarioViewModel.funcionario = funcionario;
+                funcionarioViewModel.Setores = _setorRepository.Setores;
+
+                return View(funcionarioViewModel);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Funcionario_SalvarEdicao(FuncionarioViewModel funcionarioViewMode)
+        {
+            try
+            {
+                Models.Funcionario funcionario = funcionarioViewMode.funcionario;
+                _funcionarioRepository.salvarFuncionario(funcionario, true);
+                return RedirectToAction("Funcionario_Lista");
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
     }
 }

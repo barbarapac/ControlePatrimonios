@@ -1,24 +1,24 @@
 ﻿@model FuncionarioViewModel
 
 @{
-    ViewData["Title"] = "Funcionario_Cadastro";
+    ViewData["Title"] = "Funcionario_Edicao";
 }
 
 <div class="card-header" style="margin-top: -35px">
-    <h1 style="padding: 5px; border-radius: 5px; font-size: xx-large;">Cadastro de funcionários</h1>
+    <h1 style="padding: 5px; border-radius: 5px; font-size: xx-large;">Edição de funcionário</h1>
 </div>
 <div class="container-md row" style="margin-top: 30px">
     <div class="form-group col-md-12 form-control-file" style="margin-top: 30px;">
-        <form asp-action="Funcionario_Salvar" method="post">
-
-
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+        <form asp-action="Funcionario_SalvarEdicao" method="post">
             <div class="form-row row col-md-12">
-
+                <div class="form-group col-md-1">
+                    <label class="control-label">Código</label>
+                    <input asp-for="funcionario.IdFuncionario" class="form-control" readonly/>
+                    <span asp-validation-for="funcionario.IdFuncionario" class="text-danger"></span>
+                </div>
                 <div class="form-group col-md-2">
-                    <label asp-for="funcionario.DataCadastro" class="control-label"></label>
-                    <input asp-for="funcionario.DataCadastro" type="date" class="form-control" />
+                    <label lass="control-label">Data de cadastro</label>
+                    <input asp-for="funcionario.DataCadastro" type="date" class="form-control" readonly/>
                     <span asp-validation-for="funcionario.DataCadastro" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-3">
@@ -98,7 +98,6 @@
         </form>
     </div>
 </div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
