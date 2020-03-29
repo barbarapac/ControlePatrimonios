@@ -34,6 +34,10 @@
     <Compile Remove="Migrations\20200326221901_MigracaoInicial.Designer.cs" />
     <Compile Remove="Migrations\20200326222107_MigracaoInicial.cs" />
     <Compile Remove="Migrations\20200326222107_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200326222420_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200326222420_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200326222634_PolulandoBanco.cs" />
+    <Compile Remove="Migrations\20200326222634_PolulandoBanco.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -31,6 +31,9 @@ namespace ControlePatrimonial.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql("DELETE FROM EMPRESA");
+            migrationBuilder.Sql("DELETE FROM SETOR");
+            migrationBuilder.Sql("DELETE FROM FUNCIONARIO");
 
         }
     }

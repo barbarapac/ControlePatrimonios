@@ -57,10 +57,10 @@ namespace ControlePatrimonial.Models
         [StringLength(100)]
         public string Complemento { get; set; }
 
-        [StringLength(10)]
+        [StringLength(15)]
         [Display(Name = "Tipo")]
         [Required(ErrorMessage = "Informe o tipo da empresa")]
-        public char Tipo { get; set; }
+        public string Tipo { get; set; }
 
 
         [Required(ErrorMessage = "Informe a data de cadastro empresa")]

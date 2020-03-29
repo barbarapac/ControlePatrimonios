@@ -20,47 +20,105 @@ namespace ControlePatrimonial.Controllers.Empresa
 
         public IActionResult Empresa_Lista()
         {
-            //var empresas = _empresaRepository.Empresas;
-            var empresaViewModel = new EmpresaViewModel();
-            empresaViewModel.Empresas = _empresaRepository.Empresas;
+            try
+            {
+                var empresaViewModel = new EmpresaViewModel();
+                empresaViewModel.Empresas = _empresaRepository.Empresas;
 
-            return View(empresaViewModel);
+                return View(empresaViewModel);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
                 
         public IActionResult Empresa_Detalhes(int idEmpresa)
         {
-            var empresa = _empresaRepository.Empresas.FirstOrDefault(e => e.IdEmpresa == idEmpresa);
-
-            if (empresa == null)
+            try
+            {
+                var empresa = _empresaRepository.Empresas.FirstOrDefault(e => e.IdEmpresa == idEmpresa);
+                return View(empresa);
+            }
+            catch (Exception)
             {
                 return View("~/Views/Shared/Error.cshtml");
             }
-
-            return View(empresa);
         }
 
         public IActionResult Empresa_Cadastro()
         {
-            var empresaViewModel = new EmpresaViewModel();
-            empresaViewModel.empresa = _empresaRepository.criarEmpresa();
+            try
+            {
+                var empresaViewModel = new EmpresaViewModel();
+                empresaViewModel.empresa = _empresaRepository.criarEmpresa();
 
-            return View();
+                return View();
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
         [HttpPost]
         public IActionResult Empresa_Salvar(Models.Empresa empresa)
         {
-            _empresaRepository.salvarEmpresa(empresa);
-            return RedirectToAction("Empresa_Lista"); 
+            try
+            {
+                _empresaRepository.salvarEmpresa(empresa, false);
+                return RedirectToAction("Empresa_Lista"); 
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
         public IActionResult Empresa_Excluir(int idEmpresa)
         {
-            Models.Empresa empresa = _empresaRepository.GetEmpresaById(idEmpresa);
+            try
+            {
+                Models.Empresa empresa = _empresaRepository.GetEmpresaById(idEmpresa);
 
-            _empresaRepository.excluirEmpresa(empresa);
-            return RedirectToAction("Empresa_Lista");
+                _empresaRepository.excluirEmpresa(empresa);
+                return RedirectToAction("Empresa_Lista");
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
+        public IActionResult Empresa_Edicao(int idEmpresa)
+        {
+            try
+            {
+                var empresaViewModel = new EmpresaViewModel();
+                Models.Empresa empresa = _empresaRepository.GetEmpresaById(idEmpresa);
+                empresaViewModel.empresa = empresa;
+
+                return View(empresaViewModel);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Empresa_SalvarEdicao(EmpresaViewModel empresaViewMode)
+        {
+            try
+            {
+                Models.Empresa empresa = empresaViewMode.empresa;
+                _empresaRepository.salvarEmpresa(empresa, true);
+                return RedirectToAction("Empresa_Lista");
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+        }
     }
 }

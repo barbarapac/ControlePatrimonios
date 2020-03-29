@@ -13,17 +13,17 @@ namespace ControlePatrimonial.Migrations
                 {
                     IdEmpresa = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomeFantasia = table.Column<string>(maxLength: 100, nullable: true),
-                    CnpjCpf = table.Column<string>(maxLength: 14, nullable: true),
-                    Cep = table.Column<string>(maxLength: 20, nullable: true),
-                    RazaoSocial = table.Column<string>(maxLength: 100, nullable: true),
-                    Telefone = table.Column<string>(maxLength: 15, nullable: true),
-                    Rua = table.Column<string>(maxLength: 50, nullable: true),
-                    Bairro = table.Column<string>(maxLength: 50, nullable: true),
-                    Cidade = table.Column<string>(maxLength: 50, nullable: true),
-                    Numero = table.Column<string>(maxLength: 10, nullable: true),
+                    NomeFantasia = table.Column<string>(maxLength: 100, nullable: false),
+                    CnpjCpf = table.Column<string>(maxLength: 14, nullable: false),
+                    Cep = table.Column<string>(maxLength: 20, nullable: false),
+                    RazaoSocial = table.Column<string>(maxLength: 100, nullable: false),
+                    Telefone = table.Column<string>(maxLength: 15, nullable: false),
+                    Rua = table.Column<string>(maxLength: 50, nullable: false),
+                    Bairro = table.Column<string>(maxLength: 50, nullable: false),
+                    Cidade = table.Column<string>(maxLength: 50, nullable: false),
+                    Numero = table.Column<string>(maxLength: 10, nullable: false),
                     Complemento = table.Column<string>(maxLength: 100, nullable: true),
-                    Tipo = table.Column<string>(maxLength: 10, nullable: false),
+                    Tipo = table.Column<string>(maxLength: 15, nullable: false),
                     DataCadastro = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -37,8 +37,8 @@ namespace ControlePatrimonial.Migrations
                 {
                     IdSetor = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(maxLength: 100, nullable: true),
-                    Localizacao = table.Column<string>(maxLength: 50, nullable: true),
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Localizacao = table.Column<string>(maxLength: 50, nullable: false),
                     DataCadastro = table.Column<DateTime>(nullable: false),
                     EmpresaId = table.Column<int>(nullable: false)
                 },
@@ -59,16 +59,16 @@ namespace ControlePatrimonial.Migrations
                 {
                     IdFuncionario = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(maxLength: 100, nullable: true),
-                    Email = table.Column<string>(maxLength: 100, nullable: true),
-                    Cep = table.Column<string>(maxLength: 20, nullable: true),
-                    TipoUsuario = table.Column<string>(maxLength: 10, nullable: true),
-                    Telefone = table.Column<string>(maxLength: 15, nullable: true),
-                    Rua = table.Column<string>(maxLength: 50, nullable: true),
-                    Bairro = table.Column<string>(maxLength: 50, nullable: true),
-                    Cidade = table.Column<string>(maxLength: 50, nullable: true),
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Email = table.Column<string>(maxLength: 100, nullable: false),
+                    Cep = table.Column<string>(maxLength: 20, nullable: false),
+                    TipoUsuario = table.Column<string>(maxLength: 15, nullable: false),
+                    Telefone = table.Column<string>(maxLength: 15, nullable: false),
+                    Rua = table.Column<string>(maxLength: 50, nullable: false),
+                    Bairro = table.Column<string>(maxLength: 50, nullable: false),
+                    Cidade = table.Column<string>(maxLength: 50, nullable: false),
                     Complemento = table.Column<string>(maxLength: 100, nullable: true),
-                    CnpjCpf = table.Column<string>(maxLength: 14, nullable: true),
+                    CnpjCpf = table.Column<string>(maxLength: 14, nullable: false),
                     DataCadastro = table.Column<DateTime>(nullable: false),
                     SetorId = table.Column<int>(nullable: false)
                 },

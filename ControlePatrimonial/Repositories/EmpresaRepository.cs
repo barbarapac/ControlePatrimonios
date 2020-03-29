@@ -31,10 +31,17 @@ namespace ControlePatrimonial.Repositories
 
             return empresa;
         }
-        public void salvarEmpresa(Empresa empresa)
+        public void salvarEmpresa(Empresa empresa, bool isEdicao)
         {
-            _context.Empresa.Add(empresa);
-            _context.SaveChanges();
+            if (isEdicao)
+            {
+                _context.UpdateRange(empresa);
+                _context.SaveChanges();
+            } else
+            {
+                _context.Empresa.Add(empresa);
+                _context.SaveChanges();
+            }
         }
 
         public void excluirEmpresa(Empresa empresa)
