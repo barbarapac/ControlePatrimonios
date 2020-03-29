@@ -23,53 +23,87 @@ namespace ControlePatrimonial.Controllers
 
         public IActionResult Setor_Lista()
         {
-            ViewBag.Setor = "Setor";
-            ViewData["Empresa"] = "Empresa";
+            try
+            {
+                ViewBag.Setor = "Setor";
+                ViewData["Empresa"] = "Empresa";
 
-            //var setores = _setorRepository.Setores;
-            var setorViewModel = new SetorViewModel();
-            setorViewModel.Setores = _setorRepository.Setores;
-            setorViewModel.Empresas = _empresaRepository.Empresas;
+                //var setores = _setorRepository.Setores;
+                var setorViewModel = new SetorViewModel();
+                setorViewModel.Setores = _setorRepository.Setores;
+                setorViewModel.Empresas = _empresaRepository.Empresas;
 
-            return View(setorViewModel);
+                return View(setorViewModel);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
         public ActionResult Setor_Cadastro()
         {
-            ViewBag.Setor = "Setor";
-            ViewBag.Empresas = _empresaRepository.Empresas.Select(e => new SelectListItem() { Text = e.RazaoSocial, Value=e.IdEmpresa.ToString() }).ToList();
+            try
+            {
+                ViewBag.Setor = "Setor";
+                ViewBag.Empresas = _empresaRepository.Empresas.Select(e => new SelectListItem() { Text = e.RazaoSocial, Value=e.IdEmpresa.ToString() }).ToList();
 
-            var setorViewModel = new SetorViewModel();
-            setorViewModel.setor = _setorRepository.criarSetor();
+                var setorViewModel = new SetorViewModel();
+                setorViewModel.setor = _setorRepository.criarSetor();
 
-            return View();
+                return View();
+
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
         [HttpPost]
         public IActionResult Setor_Salvar(Models.Setor setor)
         {
-            _setorRepository.salvarSetor(setor, false);
-            return RedirectToAction("Setor_Lista");
+            try
+            {
+                _setorRepository.salvarSetor(setor, false);
+                return RedirectToAction("Setor_Lista");
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+            
         }
 
         public IActionResult Setor_Detalhes(int idSetor)
         {
-            var setor = _setorRepository.Setores.FirstOrDefault(s => s.IdSetor == idSetor);
+            try
+            {                
+                var setor = _setorRepository.Setores.FirstOrDefault(s => s.IdSetor == idSetor);
 
-            if (setor == null)
+                return View(setor);
+            }
+            catch (Exception)
             {
                 return View("~/Views/Shared/Error.cshtml");
             }
-
-            return View(setor);
         }
 
         public IActionResult Setor_Excluir(int idSetor)
         {
-            Models.Setor setor = _setorRepository.GetSetorById(idSetor);
+            try
+            {
+                Models.Setor setor = _setorRepository.GetSetorById(idSetor);
 
-            _setorRepository.excluirSetor(setor);
-            return RedirectToAction("Setor_Lista");
+                _setorRepository.excluirSetor(setor);
+                return RedirectToAction("Setor_Lista");
+
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+
         }
         public IActionResult Setor_Edicao(int idSetor)
         {
